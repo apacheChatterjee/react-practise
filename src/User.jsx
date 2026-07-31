@@ -6,6 +6,9 @@ function User() {
         </div>
         )
 }
+export function ToggleUser(){
+    return <h2>This is from Toggle User</h2>
+    }
 
 function UserName(){
     return <h2>{getName()}</h2>

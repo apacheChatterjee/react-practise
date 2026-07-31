@@ -1,9 +1,11 @@
 import { useState } from 'react'
 import './App.css'
-import User, {NamedComponent, UserKey} from './User'
+import User, {NamedComponent, UserKey, ToggleUser} from './User'
 import Counter from './Counter'
 
 function App() {
+  const [displayMsg, setDisplayMsg] = useState(true);
+  let message = 'Madhu is present'
   let name = 'Madhumita'
   const userObj = {
       name:"Satya",
@@ -36,6 +38,18 @@ function App() {
             <button onClick={handleFruit}>Change fruit</button>
             <Counter />
         </div>
+         <div>
+             <h1>Toggle in React.js</h1>
+             {
+               displayMsg ? <h2>{message}</h2> : <h2>Absent</h2>
+             }
+             <button onClick={()=> setDisplayMsg(!displayMsg)}>Toggle Message</button>
+             <h2>Toggle Component</h2>
+             {
+                 displayMsg ?  <ToggleUser/> : null //Reused displayMsg for quick results this impacts the above toggle as well.
+             }
+             <button onClick={()=> setDisplayMsg(!displayMsg)}>Toggle Component</button>
+         </div>
     </>
   )
 }
