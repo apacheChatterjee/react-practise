@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import './App.css'
 import User, {NamedComponent, UserKey} from './User'
+import Counter from './Counter'
 
 function App() {
   let name = 'Madhumita'
@@ -11,6 +12,10 @@ function App() {
       phone:"2345437869"
       }
   const userArray = ['Harry','Potter','Julius','Cesar']
+  const [fruit, setFruit]=useState("Apple");
+  const handleFruit = ()=>{
+    setFruit("It is changed to Banana")
+      }
   function display(a,b){
       return a+b
             }
@@ -24,6 +29,12 @@ function App() {
             <h2>Calling function and operation: {display(10,20)}</h2>
             <h3>Fetching user object- {userObj.name} , {userObj.email}</h3>
             <h3>Array- {userArray[2]}</h3>
+        </div>
+        <div>
+            <h1>State in React.js</h1>
+            <h2>{fruit}</h2>
+            <button onClick={handleFruit}>Change fruit</button>
+            <Counter />
         </div>
     </>
   )
