@@ -1,11 +1,21 @@
-function User() {
+function User(data) {
+    console.log("User component data from props: ",data)
     return (
         <div>
-        <h1>This is user component.Display user name: </h1>
+        <h2>This is user component.Display user name: {data.name} : {data.id} </h2>
         <UserName/>
         </div>
         )
 }
+export function UserDetails({userObj}){
+    console.log("User object from props: ",userObj)
+    return (
+        <div>
+        <h2>This is user details component</h2>
+        <h3>User object from props: {userObj.phone} : {userObj.email} : {userObj.name} : {userObj.id}</h3>
+        </div>
+        )
+    }
 export function ToggleUser(){
     return <h2>This is from Toggle User</h2>
     }

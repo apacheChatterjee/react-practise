@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import './App.css'
-import User, {NamedComponent, UserKey, ToggleUser} from './User'
+import User, {NamedComponent, UserKey, ToggleUser, UserDetails} from './User'
 import Counter from './Counter'
 
 function App() {
@@ -49,6 +49,13 @@ function App() {
                  displayMsg ?  <ToggleUser/> : null //Reused displayMsg for quick results this impacts the above toggle as well.
              }
              <button onClick={()=> setDisplayMsg(!displayMsg)}>Toggle Component</button>
+         </div>
+         <div>
+             <h1>Using Props in React.js</h1>
+             <User name={"Madhu-prop"} age={23} />
+             <h2>Passing object as prop</h2>
+             <UserDetails userObj={userObj}/>
+
          </div>
     </>
   )
